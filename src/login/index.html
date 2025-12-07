@@ -1,75 +1,59 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro AnimaKids</title>
-    
+    <title>Login</title>
+    <link rel="icon" href="/assets/icons/favicon.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    
-    </head>
+</head>
 
-<body class="bg-[url(/assets/images/fundo.jpg)] bg-cover bg-fixed min-h-screen">
+<body
+    class=" relative bg-[url('file:///c%3A/Users/milen/OneDrive/Desktop/crud-movies/src/assets/images/fundo.jpg')] bg-cover bg-center min-h-screen">
 
-    <div class="min-h-screen w-full bg-indigo-200/80 flex items-center justify-center p-4">
+    <div class="absolute inset-0 bg-blue-900 opacity-60"></div>
 
-        <div class="w-full max-w-md bg-amber-50 rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.01] transition-transform duration-300 border-4 border-indigo-800">
-            
-            <div class="bg-indigo-800 p-6 text-center border-b-4 border-orange-600">
-                <h2 class="text-3xl font-extrabold text-amber-50 uppercase tracking-wider">
-                    AnimaKids
-                </h2>
-                <p class="text-sm text-indigo-200 mt-1">Sua aventura animada começa aqui!</p>
+    <div class="relative z-10 min-h-screen flex flex-col items-center justify-center text-white p-4">
+
+        <div class="container bg-neutral-50 h-96 w-96 rounded-3xl">
+            <div class="bg-red-600 rounded-t-3xl p-4 text-white text-xl font-bold text-center">
+                <h1>ANIMAKIDS</h1>
             </div>
-
-            <form id="cadastroForm" class="p-8 space-y-5" onsubmit="handleSubmit(event)">
-
-                <div>
-                    <label for="nome" class="block text-sm font-medium text-indigo-800">Nome Completo</label>
-                    <input type="text" id="nome" required 
-                           class="mt-1 block w-full px-4 py-2 border border-amber-300 rounded-lg shadow-sm focus:ring-lime-600 focus:border-lime-600 transition duration-150 placeholder-gray-400"
-                           placeholder="Ex: João Silva (ou nome do responsável)">
-                </div>
-
-                <div>
-                    <label for="email" class="block text-sm font-medium text-indigo-800">E-mail</label>
-                    <input type="email" id="email" required 
-                           class="mt-1 block w-full px-4 py-2 border border-amber-300 rounded-lg shadow-sm focus:ring-lime-600 focus:border-lime-600 transition duration-150 placeholder-gray-400"
-                           placeholder="seuemail@exemplo.com">
-                </div>
-
-                <div>
-                    <label for="senha" class="block text-sm font-medium text-indigo-800">Crie uma Senha</label>
-                    <input type="password" id="senha" required 
-                           class="mt-1 block w-full px-4 py-2 border border-amber-300 rounded-lg shadow-sm focus:ring-lime-600 focus:border-lime-600 transition duration-150 placeholder-gray-400"
-                           placeholder="Mínimo 6 caracteres">
-                </div>
-
-                <div class="flex items-start">
-                    <div class="flex items-center h-5">
-                        <input id="termos" type="checkbox" required
-                               class="focus:ring-lime-600 h-4 w-4 text-orange-600 border-amber-300 rounded">
-                    </div>
-                    <div class="ml-3 text-sm">
-                        <label for="termos" class="font-medium text-indigo-800">Eu li e concordo com os <a href="#" class="text-orange-600 hover:text-lime-600 font-bold">Termos de Uso</a>.</label>
-                    </div>
-                </div>
-
-                <button type="submit"
-                        class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-lg text-lg font-bold text-white bg-orange-600 hover:bg-orange-700 transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lime-600 transform hover:scale-[1.02]">
-                     Cadastrar e Começar a Ver!
-                </button>
-                
-                <p class="mt-4 text-center text-sm text-indigo-800">
-                    Já tem conta? 
-                    <a href="#" class="font-bold text-lime-600 hover:text-orange-600">Fazer Login</a>
-                </p>
-
-            </form>
+            <h1 class="font-bold text-lg text-blue-800 text-center mt-3">
+                LOGIN
+            </h1>
+         <form action="#" class="space-y-4">
+    
+    <div class="space-y-1 w-60 mx-auto"> 
+        <input type="email" id="email" placeholder="Email"
+               class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-700">
         </div>
+    
+    <div class="space-y-1 w-60 mx-auto">
+        <input type="password" id="password" placeholder="Senha"
+               class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-700">
         </div>
+    
+    <button type="submit"
+            class="w-60 mx-auto bg-red-600 text-white font-bold py-3 rounded-lg hover:bg-red-700 transition duration-300 shadow-md block">
+        Entrar <a href="home.html"></a>
+    </button>
+</form>
+
+                <div class="mt-6 text-center text-sm text-gray-600 space-y-2">
+                    <p>Não tem uma conta? <a href="cads.html" class="text-blue-600 font-semibold hover:underline">Cadastre-se</a></p>
+                    <p>Esqueceu sua senha? <a href="#" class="text-blue-600 font-semibold hover:underline">Recuperar</a></p>
+                </div>
+            </div>
         </div>
-        </div>
+
+    </div>
+
+    <script src="/js/login.js" type="module"></script>
 </body>
+
 </html>

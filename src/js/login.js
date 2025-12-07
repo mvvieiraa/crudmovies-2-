@@ -1,23 +1,36 @@
-function handleSubmit(event) {
-    // Previne o comportamento padrão de recarregar a página
+console.log("JS carregou!"); // <-- TESTE
+
+const form = document.querySelector("form");
+const emailInput = document.getElementById("email");
+const passwordInput = document.getElementById("password");
+
+if (!form) {
+    console.error("Formulário NÃO encontrado!");
+}
+
+form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const nome = document.getElementById('nome').value;
-    const email = document.getElementById('email').value;
-    const senha = document.getElementById('senha').value;
+    const email = emailInput.value.trim();
+    const password = passwordInput.value.trim();
 
-    // Simulação de Validação e Envio
-    if (!document.getElementById('termos').checked) {
-        alert('Você deve concordar com os Termos de Uso.');
+    if (!email || !password) {
+        alert("Por favor, preencha todos os campos!");
         return;
     }
 
-    console.log("Dados do Cadastro:");
-    console.log("Nome:", nome);
-    console.log("E-mail:", email);
-    
-    // Aqui você enviaria os dados para o seu servidor (API/Backend)
-    alert(`🥳 Cadastro de ${nome} realizado com sucesso! (Simulado)`);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Opcional: Limpar o formulário após o envio
-    document.getElementById('cadastroForm').reset();
+    if (!emailRegex.test(email)) {
+        alert("Digite um e-mail válido!");
+        return;
+    }
+
+    if (password.length < 6) {
+        alert("A senha deve ter no mínimo 6 caracteres!");
+        return;
+    }
+
+    alert("Login realizado com sucesso!");
+    form.submit();
+});
